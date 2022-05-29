@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+        <a class="nav-link" aria-current="page" href={% url 'orders' %}>Заказы</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Заказчики</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Оставить комментарий</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Написать письмо</a>
+    </li>
+</ul>
+
+<h1 class="all-books-title">ООО "Наша Компания"</h1>
+
+{% block content %}{% endblock %}
+
+
+<div class="card">
+    <div class="card-header">
+        ООО "Наша Компания"
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>Связаться с техподдержкой:</p>
+            <footer class="blockquote-footer">тел.моб., viber, telegramm
+                <cite title="Source Title">+37529-12345678</cite></footer>
+        </blockquote>
+    </div>
+</div>
+</body>
+</html>
