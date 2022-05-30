@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='orders'),
     path('order/<int:order_id>/', views.order_detail, name='order_detail'),
     path('add_comment/<int:order_id>/', views.add_comment, name='add_comment'),
+    path('send_mail', views.send_mail, name='send_mail'),
 
 
 

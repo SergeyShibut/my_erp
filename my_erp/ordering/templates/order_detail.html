@@ -6,21 +6,21 @@
 <div class="card text-center">
     <ul class="list-group list-group-flush">
 
-        <li class="list-group-item">Наименование заказчика: {{ context.order.customers }}</li>
-        <li class="list-group-item">Наименование товара: {{ context.order.name_of_goods }}</li>
-        <li class="list-group-item">Дата подписания договора: {{ context.order.date_of_contract }}</li>
-        <li class="list-group-item">Дата поставки: {{ context.order.date_of_delivery }}</li>
-        <li class="list-group-item">Состояние заказа: {{ context.order.contract_status }}</li>
-        <li class="list-group-item">Технические требования:
+        <li class="list-group-item"><b>Наименование заказчика:</b> {{ context.order.customers }}</li>
+        <li class="list-group-item"><b>Наименование товара:</b> {{ context.order.name_of_goods }}</li>
+        <li class="list-group-item"><b>Дата подписания договора:</b> {{ context.order.date_of_contract }}</li>
+        <li class="list-group-item"><b>Дата поставки:</b> {{ context.order.date_of_delivery }}</li>
+        <li class="list-group-item"><b>Состояние заказа:</b> {{ context.order.contract_status }}</li>
+        <li class="list-group-item"><b>Технические требования:</b>
             {% for requirement in context.requirements %}
             <a href="{{ requirements.docs.url }}"> {{ requirement.docs }}</a>
             {% endfor %}
         </li>
-        <li class="list-group-item">Краткие Технические требования:<br><br>
+        <li class="list-group-item"><b>Краткие Технические требования:</b><br><br>
             {% for requirement in context.requirements %}
             <p class="card-text">{{ requirement.text }}</p>{% endfor %}
         </li>
-        <li class="list-group-item">Комментарии к заказу:
+        <li class="list-group-item"><b>Комментарии к заказу:</b>
             {% for comment in context.comments %}
             <br><br>{{ comment.author }}<br>{{ comment.text }}<br>{{ comment.created_at }}</li>
             {% endfor %}

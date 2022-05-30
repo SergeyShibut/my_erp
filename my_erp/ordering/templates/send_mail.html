@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="card text-center">
-    <b>Добавить коммментарий к заказу:</b>{{context.order.name_of_goods}}
+    <b>Отправить письмо:</b>
     <form method="post">
 
         {% csrf_token %}
-        {{ context.form.as_p }}
-        <input type="submit" class="btn btn-primary" value="Добавить">
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Отправить">
 
     </form>
 </div>
