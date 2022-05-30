@@ -13,7 +13,7 @@
         <li class="list-group-item"><b>Состояние заказа:</b> {{ context.order.contract_status }}</li>
         <li class="list-group-item"><b>Технические требования:</b>
             {% for requirement in context.requirements %}
-            <a href="{{ requirements.docs.url }}"> {{ requirement.docs }}</a>
+            {{ requirement.docs }}
             {% endfor %}
         </li>
         <li class="list-group-item"><b>Краткие Технические требования:</b><br><br>
@@ -22,7 +22,7 @@
         </li>
         <li class="list-group-item"><b>Комментарии к заказу:</b>
             {% for comment in context.comments %}
-            <br><br>{{ comment.author }}<br>{{ comment.text }}<br>{{ comment.created_at }}</li>
+            <br><br>{{ comment.author }}<br>{{ comment.text }}<br>{{ comment.created_at }}
             {% endfor %}
         </li>
 

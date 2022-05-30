@@ -19,7 +19,7 @@ def index(request):
 def order_detail(request, order_id):
     order = get_object_or_404(models.Orders, id=order_id)
     requirements = models.Requirements.objects.filter(orders=order_id)
-    comments = models.Comments.objects.filter(requirements=order_id)
+    comments = models.Comments.objects.filter(orders=order_id)
 
     context = {
 
@@ -38,9 +38,8 @@ def add_comment(request, order_id):
             text = form.cleaned_data['text']
             author = form.cleaned_data['author']
             order = get_object_or_404(models.Orders, id=order_id)
-            requirements = models.Requirements.objects.filter(orders=order_id)
-            models.Comments.objects.create(text=text, author=author, )
-            return redirect('order_detail')
+            models.Comments.objects.create(text=text, author=author, orders=order)
+            return redirect('orders')
 
     else:
         form = forms.CommentsForm()

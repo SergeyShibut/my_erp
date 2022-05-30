@@ -46,7 +46,7 @@ class Requirements(models.Model):
 
 
 class Comments(models.Model):
-    requirements = models.ForeignKey(Requirements, on_delete=models.PROTECT, verbose_name='Требования')
+    orders = models.ForeignKey(Orders, on_delete=models.PROTECT, verbose_name='Заказ')
     text = models.TextField(verbose_name='Комментарий')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания комментария')
     author = models.CharField(max_length=150, verbose_name='Автор комментария')
@@ -58,4 +58,3 @@ class Comments(models.Model):
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
         ordering = ['created_at']
-

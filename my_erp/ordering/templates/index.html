@@ -6,11 +6,11 @@
 
     <div class="card-body">
         {% for order in context.orders %}
-        <p class="card-text">{{ order.customers }}</p>
-        <p class="card-text">{{ order.name_of_goods }}</p>
-        <p class="card-text">{{ order.date_of_contract }}</p>
-        <p class="card-text">{{ order.date_of_delivery }}</p>
-        <p class="card-text">{{ order.contract_status }}</p>
+        <p class="card-text"><b>Заказчик</b> {{ order.customers }}</p>
+        <p class="card-text"><b>Наименование товара</b> {{ order.name_of_goods }}</p>
+        <p class="card-text"><b>Дата подписания договора</b> {{ order.date_of_contract }}</p>
+        <p class="card-text"><b>Дата поставки</b> {{ order.date_of_delivery }}</p>
+        <p class="card-text"><b>Состояние заказа</b> {{ order.contract_status }}</p>
 
         <a href={% url 'order_detail' order_id=order.id %} class="btn btn-primary">Перейти к заказу</a><hr>
         {% endfor %}
