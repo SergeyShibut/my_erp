@@ -10,7 +10,16 @@
         <li class="list-group-item">Дата подписания договора: {{ context.order.date_of_contract }}</li>
         <li class="list-group-item">Дата поставки: {{ context.order.date_of_delivery }}</li>
         <li class="list-group-item">Состояние заказа: {{ context.order.contract_status }}</li>
-        <li class="list-group-item">Технические требования: {{ context.requirements.text }}</li>
+        <li class="list-group-item">Технические требования:
+            {% for requirement in context.requirements %}
+            <a href="#">               {{ requirement.docs }}</a>
+                {% endfor %}
+        </li>
+        <li class="list-group-item">Краткие Технические требования:
+            {% for requirement in context.requirements %}
+            <p class="card-text">{{ requirement.text }}</p>{% endfor %}
+        </li>
+
 
     </ul>
 

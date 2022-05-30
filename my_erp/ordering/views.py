@@ -14,7 +14,7 @@ def index(request):
 
 def order_detail(request, order_id):
     order = get_object_or_404(models.Orders, id=order_id)
-    requirements = models.Requirements.objects.filter(order=order_id)
+    requirements = models.Requirements.objects.filter(orders=order_id)
 
 
     context = {
