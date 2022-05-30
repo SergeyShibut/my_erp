@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Файлы ТЗ{% endblock %}
+{% block content %}
+
+<h2>Файлы Технических Заданий</h2>
+
+<table class="table table-striped table-hover" bgcolor="#efefef" border="black">
+    <thead>
+    <tr>
+        <th scope="col">Заказчик</th>
+        <th scope="col">Наименование товара</th>
+        <th scope="col">Файл технического задания</th>
+        <th scope="col">Краткое техническое задание</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for requirement in context.requirements %}
+    <tr>
+        <td>{{ requirement.orders.customers }}</td>
+        <td>{{ requirement.orders.name_of_goods }}</td>
+        <td>{{ requirement.docs }}</td>
+        <td>{{ requirement.text }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}

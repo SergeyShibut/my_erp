@@ -14,27 +14,31 @@
 
 <body>
 
-<ul class="nav nav-pills nav-fill">
-    <li class="nav-item">
-        <a class="nav-link" aria-current="page" href={% url 'orders' %}>Заказы</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Заказчики</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Оставить комментарий</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href={% url 'send_mail' %}>Написать письмо</a>
-    </li>
-</ul>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<div class="container-fluid justify-content">
 
+
+        <a class="navbar-brand" href={% url 'orders' %}>Заказы</a>
+
+        <a class="navbar-brand" href={% url 'customers_list' %}>Заказчики</a>
+
+        <a class="navbar-brand" href={% url 'downloads_file' %}>Скачать документы</a>
+
+        <a class="navbar-brand" href={% url 'send_mail' %}>Написать письмо</a>
+
+    <form class="d-flex">
+      <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
+</div>
+</nav>
 <h1 class="all-books-title">ООО "Наша Компания"</h1>
 
 {% block content %}{% endblock %}
 
 
-<div class="card">
+<div class="card" style="background-color: #e3f2fd;">
     <div class="card-header">
         ООО "Наша Компания"
     </div>

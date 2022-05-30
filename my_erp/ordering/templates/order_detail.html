@@ -13,7 +13,7 @@
         <li class="list-group-item"><b>Состояние заказа:</b> {{ context.order.contract_status }}</li>
         <li class="list-group-item"><b>Технические требования:</b>
             {% for requirement in context.requirements %}
-            {{ requirement.docs }}
+            <a href={% url 'downloads_file' %}>{{ requirement.docs }}</a>
             {% endfor %}
         </li>
         <li class="list-group-item"><b>Краткие Технические требования:</b><br><br>

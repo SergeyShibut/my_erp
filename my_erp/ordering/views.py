@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import send_mail
@@ -60,7 +61,7 @@ def send_mail(request):
         form = forms.SendmailForm(request.POST)
         if form.is_valid():
             mail = send_mail(form.cleaned_data['subject'], form.cleaned_data['content'], form.cleaned_data[
-                'your_address'],form.cleaned_data['address'])
+                'your_address'], form.cleaned_data['address'])
             if mail:
                 messages.success(request, 'Письмо отправлено')
                 return redirect('send_mail')
@@ -71,3 +72,20 @@ def send_mail(request):
         form = forms.SendmailForm()
 
     return render(request, 'send_mail.html', {'form': form})
+
+
+def downloads_file(request):
+    requirements = models.Requirements.objects.all()
+    context = {
+
+        'requirements': requirements,
+    }
+    return render(request, 'downloads_file.html', {'context': context})
+
+def customers_list(request):
+    customers = models.Customers.objects.all()
+    context = {
+
+        'customers': customers,
+    }
+    return render(request, 'customers_list.html', {'context': context})
