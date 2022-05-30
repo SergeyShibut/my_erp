@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Добавить комментарий {% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ context.form }}
+    <input type="submit" value="Добавить">
+</form>
+
+
+<!--<div class="card text-center" style="width: 30rem">-->
+<!--    <ul class="list-group list-group-flush">-->
+
+<!--        <li class="list-group-item">Наименование заказчика: {{ context.order.customers }}</li>-->
+<!--        <li class="list-group-item">Наименование товара: {{ context.order.name_of_goods }}</li>-->
+<!--        <li class="list-group-item">Дата подписания договора: {{ context.order.date_of_contract }}</li>-->
+<!--        <li class="list-group-item">Дата поставки: {{ context.order.date_of_delivery }}</li>-->
+<!--        <li class="list-group-item">Состояние заказа: {{ context.order.contract_status }}</li>-->
+<!--        <li class="list-group-item">Технические требования:-->
+<!--            {% for requirement in context.requirements %}-->
+<!--            <a href="{{ requirements.docs.url }}"> {{ requirement.docs }}</a>-->
+<!--            {% endfor %}-->
+<!--        </li>-->
+<!--        <li class="list-group-item">Краткие Технические требования:<br><br>-->
+<!--            {% for requirement in context.requirements %}-->
+<!--            <p class="card-text">{{ requirement.text }}</p>{% endfor %}-->
+<!--        </li>-->
+<!--    </ul>-->
+
+<!--</div>-->
+{% endblock %}

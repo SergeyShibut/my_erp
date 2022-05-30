@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-{% block title %} Заказ {% endblock %}
+{% block title %} Детали заказа {% endblock %}
 
 {% block content %}
-<div class="card text-center" style="width: 30rem;">
+
+<div class="card text-center">
     <ul class="list-group list-group-flush">
 
         <li class="list-group-item">Наименование заказчика: {{ context.order.customers }}</li>
@@ -12,19 +13,22 @@
         <li class="list-group-item">Состояние заказа: {{ context.order.contract_status }}</li>
         <li class="list-group-item">Технические требования:
             {% for requirement in context.requirements %}
-            <a href="#">               {{ requirement.docs }}</a>
-                {% endfor %}
+            <a href="{{ requirements.docs.url }}"> {{ requirement.docs }}</a>
+            {% endfor %}
         </li>
-        <li class="list-group-item">Краткие Технические требования:
+        <li class="list-group-item">Краткие Технические требования:<br><br>
             {% for requirement in context.requirements %}
             <p class="card-text">{{ requirement.text }}</p>{% endfor %}
         </li>
-
+        <li class="list-group-item">Комментарии к заказу:
+            {% for comment in context.comments %}
+            <br><br>{{ comment.author }}<br>{{ comment.text }}<br>{{ comment.created_at }}</li>
+            {% endfor %}
+        </li>
 
     </ul>
-
+    <a href={% url 'add_comment' order_id=context.order.id %} class="btn btn-primary">Добавить комментарий</a>
 </div>
 
-</div>
 
 {% endblock %}

@@ -12,3 +12,12 @@ img {
     border-radius: 40px;
 
 }
+
+.card text-center {
+    margin-top: 50px;
+    left: 40%;
+}
+
+.book-table {
+    margin-top: 40px;
+}
