@@ -20,7 +20,7 @@
     <tr>
         <td>{{ requirement.orders.customers }}</td>
         <td>{{ requirement.orders.name_of_goods }}</td>
-        <td>{{ requirement.docs }}</td>
+        <td><a href="{{ requirement.docs.url }}" download>{{ requirement.docs }}</a></td>
         <td>{{ requirement.text }}</td>
 
     </tr>
