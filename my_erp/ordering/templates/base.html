@@ -15,7 +15,7 @@
 <body>
 
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-<div class="container-fluid justify-content">
+    <div class="container-fluid justify-content">
 
 
         <a class="navbar-brand" href={% url 'orders' %}>Заказы</a>
@@ -26,12 +26,10 @@
 
         <a class="navbar-brand" href={% url 'send_mail' %}>Написать письмо</a>
 
-    <form class="d-flex">
-      <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+        <a class="navbar-brand" href={% url 'logout' %}>Выйти</a>
 
-</div>
+
+    </div>
 </nav>
 <h1 class="all-books-title">ООО "Наша Компания"</h1>
 

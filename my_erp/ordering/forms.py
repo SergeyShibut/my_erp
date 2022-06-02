@@ -8,5 +8,8 @@ class CommentsForm(forms.Form):
 class SendmailForm(forms.Form):
     content = forms.CharField(label='Текст сообщения', max_length=255, widget=forms.Textarea())
     subject = forms.CharField(label='Тема', max_length=150, widget=forms.TextInput())
-    your_address = forms.EmailField(label='E-mail отправителя')
     address = forms.EmailField(label='E-mail получателя')
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='Логин', max_length=255)
+    password = forms.CharField(label='Пароль', widget=forms.PasswordInput())
