@@ -1,4 +1,5 @@
 my_erp project
+enterprise resource planning система
 
 Django
 
